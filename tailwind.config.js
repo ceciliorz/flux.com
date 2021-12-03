@@ -99,6 +99,9 @@ module.exports = {
       backgroundImage: {
         'square-grid': "url('/images/bg-squaregrid.svg')"
       },
+      borderRadius: {
+        logo: '3px'
+      },
       textColor: {
         primary: 'var(--text-primary)',
         red: 'var(--text-red)'
