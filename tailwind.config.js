@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
@@ -92,6 +93,9 @@ module.exports = {
       }
     },
     extend: {
+      backgroundColor: {
+        primary: 'var(--bg-primary)'
+      },
       backgroundImage: {
         'square-grid': "url('/images/bg-squaregrid.svg')"
       },

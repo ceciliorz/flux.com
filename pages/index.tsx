@@ -1,12 +1,34 @@
+import React, { useEffect, useRef } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import Draggable from 'react-draggable'
 
 const Home: NextPage = () => {
-  const sayHi = () => {
-    alert('hi')
-  }
+  const letterFRef = useRef<any>()
+  const logoLetterLRef = useRef<any>()
+  const logoLetterURef = useRef<any>()
+
+  useEffect(() => {
+    if (letterFRef.current) {
+      letterFRef.current.onanimationend = () => {
+        logoLetterLRef.current?.classList.add('animate')
+        setTimeout(() => {
+          document.querySelectorAll('.letterL').forEach((element) => {
+            element.classList.add('animate')
+          })
+        }, 150)
+        setTimeout(() => {
+          logoLetterURef.current?.classList.add('animate')
+        }, 600)
+        setTimeout(() => {
+          document.querySelectorAll('.letterU').forEach((element) => {
+            element.classList.add('animate')
+          })
+        }, 750)
+      }
+    }
+  }, [])
 
   return (
     <>
@@ -18,32 +40,51 @@ const Home: NextPage = () => {
 
       <main className='flex items-center justify-center h-screen bg-center bg-square-grid'>
         <Draggable grid={[106, 106]}>
-          <div className='bg-white'>
+          <div className='relative bg-white'>
             <svg
               width='318'
               height='102'
               viewBox='0 0 318 102'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
-              className='text-red'
+              className='text-gray-100'
             >
-              <path
-                d='M0 3.34426C0 1.49728 1.49728 0 3.34426 0H66.8852C68.7322 0 70.2295 1.49728 70.2295 3.34426V23.4098C70.2295 25.2568 68.7322 26.7541 66.8852 26.7541H26.7541V46.8197H50.1639C52.0109 46.8197 53.5082 48.3169 53.5082 50.1639V70.2295C53.5082 72.0765 52.0109 73.5738 50.1639 73.5738H26.7541V96.9836C26.7541 98.8306 25.2568 100.328 23.4098 100.328H3.34426C1.49728 100.328 0 98.8306 0 96.9836V3.34426Z'
-                fill='currentColor'
-              />
-              <path
-                d='M103.672 3.34426C103.672 1.49728 102.175 0 100.328 0H80.2623C78.4153 0 76.918 1.49728 76.918 3.34427V96.9836C76.918 98.8306 78.4153 100.328 80.2623 100.328H133.77C135.617 100.328 137.115 98.8306 137.115 96.9836V76.918C137.115 75.0711 135.617 73.5738 133.77 73.5738H103.672V3.34426Z'
-                fill='currentColor'
-              />
-              <path
-                d='M145.475 0C143.628 0 142.131 1.49728 142.131 3.34426V62.6527H142.138C142.131 85.2787 161.109 102 183.934 102C206.76 102 225.738 85.2787 225.73 62.6527H225.738V3.34426C225.738 1.49728 224.24 0 222.393 0H202.328C200.481 0 198.984 1.49728 198.984 3.34426V60.1967C198.984 68.5082 192.246 75.2459 183.934 75.2459C175.719 75.2459 168.885 68.327 168.885 60.1967V3.34426C168.885 1.49728 167.388 0 165.541 0H145.475Z'
-                fill='currentColor'
-              />
               <path
                 d='M233.216 0C231.397 0 230.273 1.98508 231.209 3.5454L259.18 50.1639L231.209 96.7825C230.273 98.3428 231.397 100.328 233.216 100.328H257.286C258.461 100.328 259.55 99.7115 260.154 98.7042L274.229 75.2459L288.304 98.7042C288.909 99.7115 289.997 100.328 291.172 100.328H315.242C317.062 100.328 318.186 98.3428 317.249 96.7825L289.278 50.1639L317.249 3.5454C318.186 1.98508 317.062 0 315.242 0H291.172C289.997 0 288.909 0.616344 288.304 1.62365L274.229 25.082L260.154 1.62365C259.55 0.616344 258.461 0 257.286 0H233.216Z'
                 fill='currentColor'
               />
             </svg>
+
+            <div className='logo-letter absolute top-0 left-0 w-[70px] h-[100px]'>
+              {/* F */}
+              <div className='f1 bg-red-500 absolute bottom-0 left-0 w-[27px] h-[100px] rounded-[3px] transition-all'></div>
+              <div className='f2 bg-red-500 absolute top-0 left-0 w-[70px] h-[27px] rounded-[3px]'></div>
+              <div
+                ref={letterFRef}
+                className='f3 bg-red-500 absolute top-[47px] left-0 w-[53px] h-[27px] rounded-[3px]'
+              ></div>
+            </div>
+
+            <div
+              ref={logoLetterLRef}
+              className='logo-letter logo-letter-L absolute top-0 left-[76px] w-[60px] h-[100px]'
+            >
+              {/* L */}
+              <div className='letterL l1 bg-red-500 absolute top-0 left-0 w-[27px] h-[100px] rounded-[3px] transition-all'></div>
+              <div className='letterL l2 bg-red-500 absolute bottom-0 left-0 w-[60px] h-[27px] rounded-[3px]'></div>
+              <div className='letterL l3 bg-red-500 absolute bottom-0 left-0 w-[53px] h-[27px] rounded-[3px]'></div>
+            </div>
+
+            <div
+              ref={logoLetterURef}
+              className='logo-letter logo-letter-U absolute top-0 left-[142px] w-[84px] h-[101px]'
+            >
+              {/* L */}
+              <div className='letterU u1 bg-red-500 absolute top-0 left-0 w-[27px] h-[62px] rounded-t-[3px] transition-all'></div>
+              <div className='letterU u2 bg-red-500 absolute bottom-[39px] right-0 w-[27px] h-[62px] rounded-t-[3px]'></div>
+              <div className='letterU u3 bg-red-500 absolute bottom-0 left-0 w-[84px] h-[40px] rounded-[3px] rounded-b-full'></div>
+              <div className='letterU u4 hidden z-10 rounded-full w-[30px] h-[30px] bg-primary absolute bottom-[27px] left-[27px]'></div>
+            </div>
           </div>
         </Draggable>
       </main>
