@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Div100vh from 'react-div-100vh'
 import LogoAnimated from '../components/LogoAnimated'
 
 const Home: NextPage = () => {
@@ -11,9 +12,11 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='flex items-center justify-center h-screen bg-center bg-square-grid'>
-        <LogoAnimated />
-      </main>
+      <Div100vh>
+        <main className='flex items-center justify-center h-full bg-center bg-square-grid'>
+          <LogoAnimated />
+        </main>
+      </Div100vh>
     </>
   )
 }
