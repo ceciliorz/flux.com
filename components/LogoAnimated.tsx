@@ -105,7 +105,7 @@ const LogoAnimated: React.FC = () => {
           { at: '<' }
         ]
       ],
-      { duration: 2 }
+      { duration: 2.5 }
     )
   }, [])
 
