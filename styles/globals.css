@@ -1,4 +1,5 @@
 /* ./styles/globals.css */
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -8,4 +9,22 @@
 html,
 body {
   @apply bg-white;
+}
+
+@media screen and (min-height: 667px) {
+  .site-footer {
+    @apply top-[414px];
+  }
+}
+
+@media screen and (min-height: 880px) {
+  .site-footer {
+    @apply top-[520px];
+  }
+}
+
+@media screen and (min-height: 1024px) {
+  .logo-container {
+    @apply bottom-0;
+  }
 }

@@ -53,7 +53,7 @@ const LogoAnimated: React.FC = () => {
           '.u4',
           {
             transform: [`translateY(-2px)`, `translateY(0)`],
-            borderRadius: ['0', '15px']
+            borderRadius: ['0', '0 0 15px 15px']
           },
           { at: '<' }
         ],
@@ -105,7 +105,7 @@ const LogoAnimated: React.FC = () => {
           { at: '<' }
         ]
       ],
-      { duration: 2.5 }
+      { duration: 2 }
     )
   }, [])
 
@@ -126,11 +126,11 @@ const LogoAnimated: React.FC = () => {
       </div>
 
       {/* U */}
-      <div className='logo-letter-u absolute top-0 left-[142px] w-[84px] h-[101px]'>
+      <div className='logo-letter-u absolute top-0 left-[142px] w-[84px] h-[101px] z-10'>
         <div className='u1 bg-red-500 absolute top-0 left-0 w-[27px]'></div>
         <div className='u2 bg-red-500 absolute bottom-[39px] right-0 w-[27px] rounded-t-logo'></div>
         <div className='absolute bottom-0 left-0 bg-red-500 u3'></div>
-        <div className='u4 z-10 w-[30px] h-[30px] bg-primary absolute bottom-[27px] left-[27px]'></div>
+        <div className='u4 z-10 w-[30px] top-0 bg-primary absolute bottom-[27px] left-[27px]'></div>
       </div>
 
       {/* X */}

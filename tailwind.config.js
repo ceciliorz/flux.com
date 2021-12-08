@@ -1,3 +1,14 @@
+function spacing() {
+  const scale = Array(101)
+    .fill(null)
+    .map((_, i) => [i * 0.5, `${i * 0.5 * 8}px`])
+  const values = Object.fromEntries(scale)
+  values.px = '1px'
+  values.xs = '2px'
+  values.sm = '4px'
+  return values
+}
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -92,6 +103,7 @@ module.exports = {
         900: 'var(--purple-900)'
       }
     },
+    spacing: spacing(),
     extend: {
       backgroundColor: {
         primary: 'var(--bg-primary)'
@@ -104,6 +116,7 @@ module.exports = {
       },
       textColor: {
         primary: 'var(--text-primary)',
+        secondary: 'var(--text-secondary)',
         red: 'var(--text-red)'
       }
     }
