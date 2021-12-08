@@ -23,7 +23,7 @@ const Home: NextPage = () => {
               </button>
             </div>
 
-            <footer className='absolute flex items-center sm:px-[106px] px-6 justify-between left-1/2 transform -translate-x-1/2 sm:max-w-[858px] max-w-[532px] top-[308px] w-screen text-[14px] text-secondary leading-none site-footer'>
+            <footer className='absolute flex items-center sm:px-[106px] px-3.5 justify-between left-1/2 transform -translate-x-1/2 sm:max-w-[858px] max-w-[492px] top-[308px] w-screen text-[14px] text-secondary leading-none site-footer'>
               <div className='flex space-x-sm item-center'>
                 <span className='pt-px'>Made with</span>
                 <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
