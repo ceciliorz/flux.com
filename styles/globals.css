@@ -24,7 +24,7 @@ body {
 }
 
 @media screen and (min-height: 1024px) {
-  .logo-container {
-    @apply bottom-0;
+  .site-footer {
+    @apply top-[626px];
   }
 }
