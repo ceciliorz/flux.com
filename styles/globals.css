@@ -17,7 +17,7 @@ body {
   }
 }
 
-@media screen and (min-height: 880px) {
+@media screen and (min-height: 844px) {
   .site-footer {
     @apply top-[520px];
   }

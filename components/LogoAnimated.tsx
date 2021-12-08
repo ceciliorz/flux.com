@@ -6,6 +6,7 @@ const LogoAnimated: React.FC = () => {
   useEffect(() => {
     const logoAnimation = timeline(
       [
+        ['.logo-letter-f', { opacity: [0, 1] }, { duration: 0.0001 }],
         ['.f1', { height: ['100px'] }],
         ['.f2', { width: ['70px'] }],
         ['.f3', { width: ['53px'] }],
@@ -112,21 +113,21 @@ const LogoAnimated: React.FC = () => {
   return (
     <div className='relative bg-white w-[318px] h-[102px]'>
       {/* F */}
-      <div className='absolute top-0 left-0 w-[70px] h-[100px]'>
+      <div className='logo-letter-f absolute top-0 opacity-0 left-0 w-[70px] h-[100px]'>
         <div className='f1 bg-red-500 absolute bottom-0 left-0 w-[27px] rounded-logo'></div>
         <div className='f2 bg-red-500 absolute top-0 left-0 h-[27px] rounded-logo'></div>
         <div className='f3 bg-red-500 absolute top-[47px] left-0 h-[27px] rounded-logo'></div>
       </div>
 
       {/* L */}
-      <div className='logo-letter-l absolute top-0 left-[76px] w-[60px] h-[100px]'>
+      <div className='logo-letter-l opacity-0 absolute top-0 left-[76px] w-[60px] h-[100px]'>
         <div className='l1 bg-red-500 absolute top-0 left-0 w-[27px] h-[100px] rounded-logo'></div>
         <div className='l2 bg-red-500 absolute bottom-0 left-0 w-[53px] h-[27px] rounded-logo'></div>
         <div className='l3 bg-red-500 absolute bottom-0 left-0 h-[27px] w-[60px] rounded-logo'></div>
       </div>
 
       {/* U */}
-      <div className='logo-letter-u absolute top-0 left-[142px] w-[84px] h-[101px] z-10'>
+      <div className='logo-letter-u absolute opacity-0 top-0 left-[142px] w-[84px] h-[101px] z-10'>
         <div className='u1 bg-red-500 absolute top-0 left-0 w-[27px]'></div>
         <div className='u2 bg-red-500 absolute bottom-[39px] right-0 w-[27px] rounded-t-logo'></div>
         <div className='absolute bottom-0 left-0 bg-red-500 u3'></div>
@@ -134,7 +135,7 @@ const LogoAnimated: React.FC = () => {
       </div>
 
       {/* X */}
-      <div className='logo-letter-x absolute top-0 left-[232px] w-[85px] h-[101px] overflow-hidden'>
+      <div className='logo-letter-x absolute top-0 opacity-0 left-[232px] w-[85px] h-[101px] overflow-hidden'>
         <div className='x1 bg-red-500 absolute top-0 left-[29px] w-[27px] h-[100px] rounded-logo transform skew-x-[-31deg]'></div>
         <div className='x2 bg-red-500 absolute top-0 right-[29px] w-[27px] h-[100px] rounded-logo transform skew-x-[31deg]'></div>
         <div className='x3 bg-red-500 absolute bottom-[-50px] left-0 w-[84px] h-[40px] rounded-logo rounded-b-full'></div>
