@@ -11,7 +11,7 @@ body {
   @apply bg-white;
 }
 
-@media screen and (min-height: 667px) {
+@media screen and (min-height: 660px) {
   .site-footer {
     @apply top-[414px];
   }
